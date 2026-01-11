@@ -38,7 +38,14 @@ export default function PortfolioSection() {
             setTimeout(() => {
                 const secondCard = contentRef.current?.children[1];
                 if (secondCard) {
-                    secondCard.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                    if (containerRef.current) {
+                        const el = secondCard as HTMLElement;
+                        const containerWidth = containerRef.current.offsetWidth;
+                        const cardWidth = el.offsetWidth;
+                        const cardLeft = el.offsetLeft;
+                        const scrollPos = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+                        containerRef.current.scrollTo({ left: scrollPos, behavior: "smooth" });
+                    }
                 }
             }, 300);
         }
