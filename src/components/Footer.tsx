@@ -80,7 +80,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
                     <ul className="flex flex-wrap justify-center md:justify-start gap-8">
                         <li><a href="/" className="hover:text-white transition-colors border-b border-white pb-0.5 text-white">Home</a></li>
-                        <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/about-us" className="hover:text-white transition-colors">About Us</a></li>
                         <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
                         <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
                     </ul>
