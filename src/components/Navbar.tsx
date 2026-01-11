@@ -127,26 +127,26 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-white/95 backdrop-blur-md z-40 transform transition-transform duration-300 md:hidden flex flex-col justify-center items-center ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed inset-0 bg-white/95 backdrop-blur-md z-40 transform transition-transform duration-300 md:hidden flex flex-col justify-start items-center overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
-                <ul className="flex flex-col items-center gap-8 text-center p-6 w-full max-w-sm">
+                <ul className="flex flex-col items-center gap-6 text-center p-6 pt-28 pb-12 w-full max-w-sm">
                     {navLinks.map((link) => (
                         <li key={link.name} className="w-full">
                             <Link
                                 href={link.href}
-                                className="text-2xl font-bold text-slate-800 hover:text-[#5057e6] transition-colors block"
+                                className="text-2xl font-bold text-slate-800 hover:text-[#5057e6] transition-colors block py-2"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
                             </Link>
                             {link.dropdown && (
-                                <div className="mt-4 flex flex-col gap-3 pl-4 border-l-2 border-slate-100 items-center">
+                                <div className="mt-2 flex flex-col gap-3 pl-4 border-l-2 border-slate-100 items-center bg-slate-50/50 rounded-xl py-4 mx-4">
                                     {link.dropdown.map((item) => (
                                         <Link
                                             key={item.name}
                                             href={item.href}
-                                            className="text-lg font-medium text-slate-500 hover:text-[#5057e6] transition-colors block py-1"
+                                            className="text-base font-medium text-slate-500 hover:text-[#5057e6] transition-colors block py-1"
                                             onClick={() => setIsOpen(false)}
                                         >
                                             {item.name}
@@ -156,10 +156,10 @@ export default function Navbar() {
                             )}
                         </li>
                     ))}
-                    <li className="mt-8">
+                    <li className="mt-4 w-full px-4">
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-[#5057e6] rounded-full hover:bg-[#4349c2] transition-all shadow-lg shadow-indigo-200"
+                            className="flex w-full items-center justify-center px-8 py-4 text-lg font-bold text-white bg-[#5057e6] rounded-full hover:bg-[#4349c2] transition-all shadow-lg shadow-indigo-200"
                             onClick={() => setIsOpen(false)}
                         >
                             Get Started

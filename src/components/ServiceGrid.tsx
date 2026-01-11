@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 
 const services = [
     {
@@ -58,11 +58,16 @@ export default function ServiceGrid() {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [bounds, setBounds] = useState({ containerWidth: 0, contentWidth: 0 });
+    const [isMobile, setIsMobile] = useState(false);
 
     // Smooth spring animation for the movement
     const x = useSpring(0, { stiffness: 100, damping: 30 });
 
     useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        }
+
         const calculateBounds = () => {
             if (containerRef.current && contentRef.current) {
                 setBounds({
@@ -72,17 +77,22 @@ export default function ServiceGrid() {
             }
         };
 
-        // Calculate initially and on resize
+        checkMobile();
         calculateBounds();
+
         // Small delay to ensure images/layout stable
         setTimeout(calculateBounds, 100);
 
-        window.addEventListener("resize", calculateBounds);
+        window.addEventListener("resize", () => {
+            checkMobile();
+            calculateBounds();
+        });
+
         return () => window.removeEventListener("resize", calculateBounds);
     }, []);
 
     const handleMouseMove = (e: React.MouseEvent) => {
-        if (!containerRef.current) return;
+        if (!containerRef.current || isMobile) return;
 
         const { clientX } = e;
         const { left, width } = containerRef.current.getBoundingClientRect();
@@ -106,21 +116,21 @@ export default function ServiceGrid() {
             {/* Mouse Move Interactive Container */}
             <div
                 ref={containerRef}
-                className="w-full overflow-hidden cursor-e-resize"
+                className="w-full overflow-hidden cursor-default md:cursor-e-resize"
                 onMouseMove={handleMouseMove}
             >
                 <motion.div
                     ref={contentRef}
-                    style={{ x }}
-                    className="grid grid-cols-2 w-full md:flex md:w-max"
+                    style={{ x: isMobile ? 0 : x }}
+                    className="grid grid-cols-1 sm:grid-cols-2 w-full md:flex md:w-max"
                 >
                     {services.map((service, index) => (
                         <a
                             key={index}
                             href={service.href}
-                            // Mobile: Grid cols 2, aspect-square, border-b, smaller padding
+                            // Mobile: Grid cols 1 (sm: 2), aspect-square, border-b, smaller padding
                             // Desktop: Fixed 400x400, flex row, border-r (handled), no border-b
-                            className="group relative w-full aspect-square md:h-[400px] md:w-[400px] border-r border-b border-slate-200 md:border-b-0 md:last:border-r-0 overflow-hidden flex flex-col justify-end p-4 md:p-8 transition-all hover:bg-slate-50 bg-white"
+                            className="group relative w-full aspect-square md:h-[400px] md:w-[400px] border-r-0 border-b border-slate-200 md:border-b-0 md:border-r md:last:border-r-0 overflow-hidden flex flex-col justify-end p-6 md:p-8 transition-all hover:bg-slate-50 bg-white"
                         >
                             {/* Background Image - Always Visible */}
                             <div className="absolute inset-0 z-0 transition-all duration-500">
@@ -141,7 +151,7 @@ export default function ServiceGrid() {
                                     <h3 className="text-xl font-semibold md:text-3xl md:font-bold text-white leading-tight max-w-[85%]">
                                         {service.title}
                                     </h3>
-                                    <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-slate-900 transition-all shadow-lg backdrop-blur-sm">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-slate-900 transition-all shadow-lg backdrop-blur-sm">
                                         <ArrowRight size={20} className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                                     </div>
                                 </div>

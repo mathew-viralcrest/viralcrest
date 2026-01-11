@@ -11,7 +11,7 @@ export default function GlossyHeroVisual() {
                 initial={{ rotateX: 10, rotateY: -10, scale: 0.9, opacity: 0 }}
                 animate={{ rotateX: 0, rotateY: 0, scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative z-10 w-[320px] md:w-[420px] bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden"
+                className="relative z-10 w-[92vw] max-w-[320px] md:max-w-[420px] bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden"
             >
                 {/* Header */}
                 <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">

@@ -44,7 +44,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
-    <div className="w-[400px] shrink-0 bg-gradient-to-br from-white via-white to-[#5057e6]/5 border border-slate-100 p-8 rounded-[2rem] relative flex flex-col justify-between h-[320px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] mx-4 hover:-translate-y-1 transition-transform duration-300">
+    <div className="w-[300px] md:w-[400px] shrink-0 bg-gradient-to-br from-white via-white to-[#5057e6]/5 border border-slate-100 p-6 md:p-8 rounded-[2rem] relative flex flex-col justify-between h-[300px] md:h-[320px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] mx-4 hover:-translate-y-1 transition-transform duration-300">
         {/* Top Content */}
         <div>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 block">
