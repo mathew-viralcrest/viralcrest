@@ -122,15 +122,15 @@ export default function ServiceGrid() {
                 <motion.div
                     ref={contentRef}
                     style={{ x: isMobile ? 0 : x }}
-                    className="grid grid-cols-1 sm:grid-cols-2 w-full md:flex md:w-max"
+                    className="grid grid-cols-2 w-full md:flex md:w-max"
                 >
                     {services.map((service, index) => (
                         <a
                             key={index}
                             href={service.href}
-                            // Mobile: Grid cols 1 (sm: 2), aspect-square, border-b, smaller padding
+                            // Mobile: Grid cols 2, aspect-square, border-b, smaller padding
                             // Desktop: Fixed 400x400, flex row, border-r (handled), no border-b
-                            className="group relative w-full aspect-square md:h-[400px] md:w-[400px] border-r-0 border-b border-white/10 md:border-b-0 md:border-r md:last:border-r-0 overflow-hidden flex flex-col justify-end p-6 md:p-8 transition-all hover:bg-white/5 bg-background"
+                            className="group relative w-full aspect-square md:h-[400px] md:w-[400px] border-r-0 border-b border-white/10 md:border-b-0 md:border-r md:last:border-r-0 overflow-hidden flex flex-col justify-end p-4 md:p-8 transition-all hover:bg-white/5 bg-background"
                         >
                             {/* Background Image - Always Visible */}
                             <div className="absolute inset-0 z-0 transition-all duration-500">
@@ -144,15 +144,15 @@ export default function ServiceGrid() {
 
                             {/* Content */}
                             <div className="relative z-10 w-full transform transition-transform duration-300 group-hover:-translate-y-2">
-                                <div className="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                                <div className="text-[10px] md:text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
                                     {service.category}
                                 </div>
-                                <div className="flex items-end justify-between gap-4">
-                                    <h3 className="text-xl font-semibold md:text-3xl md:font-bold text-white leading-tight max-w-[85%]">
+                                <div className="flex items-end justify-between gap-2 md:gap-4">
+                                    <h3 className="text-sm md:text-3xl font-bold text-white leading-tight max-w-[85%]">
                                         {service.title}
                                     </h3>
-                                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-slate-900 transition-all shadow-lg backdrop-blur-sm">
-                                        <ArrowRight size={20} className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-slate-900 transition-all shadow-lg backdrop-blur-sm shrink-0">
+                                        <ArrowRight size={16} className="md:w-5 md:h-5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                                     </div>
                                 </div>
                             </div>
