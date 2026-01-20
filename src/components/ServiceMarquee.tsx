@@ -21,7 +21,7 @@ export default function ServiceMarquee({ items }: ServiceMarqueeProps) {
     const services = items || defaultServices;
 
     return (
-        <div className="w-full bg-[#1e1b4b] overflow-hidden py-3 relative z-20 shadow-lg border-y border-white/10">
+        <div className="w-full bg-[#8b5cf6] overflow-hidden py-3 relative z-20 shadow-lg border-y border-white/10">
             <div className="flex whitespace-nowrap">
                 <motion.div
                     className="flex items-center gap-8"
@@ -35,11 +35,11 @@ export default function ServiceMarquee({ items }: ServiceMarqueeProps) {
                     {/* Duplicate list multiple times for seamless loop */}
                     {[...services, ...services, ...services, ...services].map((service, index) => (
                         <div key={index} className="flex items-center gap-8 group">
-                            <span className="text-xl md:text-3xl font-medium text-white tracking-tight group-hover:text-[#5057e6] transition-colors duration-300">
+                            <span className="text-xl md:text-3xl font-medium text-white tracking-tight group-hover:text-white/80 transition-colors duration-300">
                                 {service}
                             </span>
                             <Star
-                                className="text-[#5057e6] w-5 h-5 md:w-8 md:h-8 fill-[#5057e6] group-hover:rotate-180 transition-transform duration-700"
+                                className="text-white w-5 h-5 md:w-8 md:h-8 fill-white group-hover:rotate-180 transition-transform duration-700"
                             />
                         </div>
                     ))}

@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google"; // Using proper Google Font
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -103,10 +104,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} font-sans bg-slate-50 text-slate-900 antialiased overflow-x-hidden selection:bg-[#5057e6]/30 selection:text-[#5057e6]`}
+        className={`${outfit.variable} font-sans bg-background text-foreground antialiased overflow-x-hidden selection:bg-[#8b5cf6]/30 selection:text-[#8b5cf6]`}
       >
         <Navbar />
         {children}
+        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>

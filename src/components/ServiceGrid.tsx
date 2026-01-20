@@ -7,49 +7,49 @@ const services = [
     {
         category: "Advertising",
         title: "Performance Marketing",
-        href: "/services/performance-marketing",
+        href: "/performance-marketing",
         image: "/services/pay-per-click.jpg"
     },
     {
         category: "Development",
         title: "Website Development",
-        href: "/services/website-development",
+        href: "/website-development",
         image: "/services/web-development.jpg"
     },
     {
         category: "Commerce",
         title: "Ecommerce Development",
-        href: "/services/ecommerce-development",
+        href: "/shopify-development",
         image: "/services/ecommerce-development.jpg"
     },
     {
         category: "AI & content",
         title: "AI Content Creations",
-        href: "/services/ai-content-creation",
+        href: "/ai-content-creations",
         image: "/services/ai-content-creation.jpg"
     },
     {
         category: "Marketing",
         title: "Social Media Marketing",
-        href: "/services/social-media-marketing",
+        href: "/social-media-marketing",
         image: "/services/social-media-marketing.jpg"
     },
     {
         category: "Growth",
         title: "SEO (Search Engine Optimization)",
-        href: "/services/seo-optimization",
+        href: "/search-engine-optimization",
         image: "/services/seo-optimization.jpg"
     },
     {
         category: "Automation",
         title: "WhatsApp Automation & Marketing",
-        href: "/services/whatsapp-automation",
+        href: "/whatsapp-marketing",
         image: "/services/whatsapp-automation.jpg"
     },
     {
         category: "Creative",
         title: "Branding & Design Service",
-        href: "/services/branding-design",
+        href: "/branding-design-service",
         image: "/services/branding-design.jpg"
     }
 ];
@@ -112,7 +112,7 @@ export default function ServiceGrid() {
     };
 
     return (
-        <section className="bg-slate-50 border-t border-slate-200">
+        <section className="bg-background border-t border-white/10">
             {/* Mouse Move Interactive Container */}
             <div
                 ref={containerRef}
@@ -130,7 +130,7 @@ export default function ServiceGrid() {
                             href={service.href}
                             // Mobile: Grid cols 1 (sm: 2), aspect-square, border-b, smaller padding
                             // Desktop: Fixed 400x400, flex row, border-r (handled), no border-b
-                            className="group relative w-full aspect-square md:h-[400px] md:w-[400px] border-r-0 border-b border-slate-200 md:border-b-0 md:border-r md:last:border-r-0 overflow-hidden flex flex-col justify-end p-6 md:p-8 transition-all hover:bg-slate-50 bg-white"
+                            className="group relative w-full aspect-square md:h-[400px] md:w-[400px] border-r-0 border-b border-white/10 md:border-b-0 md:border-r md:last:border-r-0 overflow-hidden flex flex-col justify-end p-6 md:p-8 transition-all hover:bg-white/5 bg-background"
                         >
                             {/* Background Image - Always Visible */}
                             <div className="absolute inset-0 z-0 transition-all duration-500">

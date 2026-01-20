@@ -76,16 +76,17 @@ export default function PortfolioSection() {
     };
 
     return (
-        <section className="py-24 bg-white overflow-hidden border-t border-slate-100">
+
+        <section className="py-24 bg-[#0f0f14] overflow-hidden border-t border-white/5">
             <div className="container mx-auto px-6 mb-12">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                     <div>
-                        <span className="text-[#5057e6] font-semibold tracking-wide uppercase text-sm">Our Work</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-2 leading-tight">
+                        <span className="text-[#8b5cf6] font-semibold tracking-wide uppercase text-sm">Our Work</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mt-2 leading-tight">
                             Selected <span className="text-slate-500">Works</span>
                         </h2>
                     </div>
-                    <p className="text-slate-500 max-w-md text-lg">
+                    <p className="text-slate-400 max-w-md text-lg">
                         We build digital experiences that drive results. Drag or move your mouse to explore our recent projects.
                     </p>
                 </div>
@@ -112,19 +113,21 @@ export default function PortfolioSection() {
                     {portfolioItems.map((src, idx) => (
                         <div
                             key={idx}
-                            className="relative flex-none w-[85vw] md:w-[600px] aspect-video group cursor-pointer overflow-hidden bg-slate-100 border border-slate-200 snap-center md:snap-align-none rounded-xl md:rounded-none"
+                            className="relative flex-none w-[85vw] md:w-[600px] aspect-video group cursor-pointer overflow-hidden rounded-[2rem] bg-gradient-to-br from-white/10 via-white/5 to-[#8b5cf6]/5 border border-white/10 p-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] md:snap-align-none hover:-translate-y-1 transition-all duration-300"
                         >
-                            <img
-                                src={src}
-                                alt="Portfolio Project"
-                                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 md:grayscale md:brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
-                                loading="lazy"
-                            />
-                            {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <span className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-white font-semibold text-lg border-b-2 border-white pb-1">
-                                    View Project
-                                </span>
+                            <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
+                                <img
+                                    src={src}
+                                    alt="Portfolio Project"
+                                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
+                                    loading="lazy"
+                                />
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-white font-semibold text-lg border-b-2 border-white pb-1">
+                                        View Project
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     ))}

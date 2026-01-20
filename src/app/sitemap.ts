@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'whatsapp-automation',
         'branding-design',
     ].map((slug) => ({
-        url: `${baseUrl}/services/${slug}`,
+        url: `${baseUrl}/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.9,

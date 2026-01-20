@@ -10,7 +10,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-black text-white pt-24 pb-8 relative">
+        <footer className="bg-background text-white pt-24 pb-8 relative">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
 
@@ -69,7 +69,7 @@ export default function Footer() {
                     {/* Back to Top Button sitting on the line */}
                     <button
                         onClick={scrollToTop}
-                        className="absolute right-0 -top-5 w-10 h-10 bg-[#5057e6] rounded-lg flex items-center justify-center text-white shadow-lg hover:bg-[#4b48d6] transition-colors"
+                        className="absolute right-0 -top-5 w-10 h-10 bg-[#8b5cf6] rounded-lg flex items-center justify-center text-white shadow-lg hover:bg-[#4b48d6] transition-colors"
                         aria-label="Back to top"
                     >
                         <ArrowUp size={20} />

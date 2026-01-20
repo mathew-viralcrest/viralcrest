@@ -44,13 +44,13 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
-    <div className="w-[300px] md:w-[400px] shrink-0 bg-gradient-to-br from-white via-white to-[#5057e6]/5 border border-slate-100 p-6 md:p-8 rounded-[2rem] relative flex flex-col justify-between h-[300px] md:h-[320px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] mx-4 hover:-translate-y-1 transition-transform duration-300">
+    <div className="w-[300px] md:w-[400px] shrink-0 bg-gradient-to-br from-white/10 via-white/5 to-[#8b5cf6]/5 border border-white/10 p-6 md:p-8 rounded-[2rem] relative flex flex-col justify-between h-[300px] md:h-[320px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] mx-4 hover:-translate-y-1 transition-transform duration-300">
         {/* Top Content */}
         <div>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 block">
                 Testimonial
             </span>
-            <p className="text-slate-700 text-base font-medium leading-relaxed line-clamp-4">
+            <p className="text-slate-300 text-base font-medium leading-relaxed line-clamp-4">
                 "{item.text}"
             </p>
         </div>
@@ -58,22 +58,22 @@ const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
         {/* Bottom Section with Quote & Profile */}
         <div className="flex items-end justify-between mt-4">
             {/* Quote Icon */}
-            <div className="text-[#5057e6]/20">
+            <div className="text-[#8b5cf6]/20">
                 <Quote size={48} fill="currentColor" stroke="none" />
             </div>
 
             {/* Profile */}
-            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-1.5 pr-4 rounded-full border border-slate-100 shadow-sm">
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm p-1.5 pr-4 rounded-full border border-white/10 shadow-sm">
                 <img
                     src={item.image}
                     alt={item.name}
-                    className="w-10 h-10 rounded-full object-cover border border-slate-200"
+                    className="w-10 h-10 rounded-full object-cover border border-white/10"
                 />
                 <div>
-                    <h4 className="text-sm font-bold text-slate-900 leading-tight">
+                    <h4 className="text-sm font-bold text-white leading-tight">
                         {item.name}
                     </h4>
-                    <p className="text-[10px] text-slate-500 font-medium">{item.role}</p>
+                    <p className="text-[10px] text-slate-400 font-medium">{item.role}</p>
                 </div>
             </div>
         </div>
@@ -82,16 +82,16 @@ const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
 
 export default function Testimonials() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-24 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10 mb-16">
                 {/* Header Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.1]">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-white leading-[1.1]">
                         Hear What Our Clients <br />
-                        Say About Us <span className="text-[#5057e6]">.</span>
+                        Say About Us <span className="text-[#8b5cf6]">.</span>
                     </h2>
                     <div className="lg:pl-10">
-                        <p className="text-slate-500 text-lg leading-relaxed">
+                        <p className="text-slate-400 text-lg leading-relaxed">
                             Our clients appreciate the strategic approach, the dedication to
                             quality, and the tangible results we deliver. We create meaningful
                             connections.
@@ -141,8 +141,8 @@ export default function Testimonials() {
             </div>
 
             {/* Fade Gradients for Edges */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20 top-40"></div>
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20 top-40"></div>
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent pointer-events-none z-20 top-40"></div>
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent pointer-events-none z-20 top-40"></div>
 
         </section>
     );

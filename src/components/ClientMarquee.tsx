@@ -22,7 +22,7 @@ const clients = [
 
 export default function ClientMarquee() {
     return (
-        <section className="py-6 bg-slate-50 border-b border-slate-200 overflow-hidden">
+        <section className="py-6 bg-[#0f0f14] border-b border-white/5 overflow-hidden">
 
             <div className="flex">
                 <motion.div
@@ -44,7 +44,7 @@ export default function ClientMarquee() {
                             <img
                                 src={client.logo}
                                 alt={client.name}
-                                className="w-full h-full object-contain filter grayscale opacity-50 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110"
+                                className="w-full h-full object-contain transition-all duration-300 opacity-90 hover:opacity-100 transform hover:scale-110"
                             />
                         </div>
                     ))}

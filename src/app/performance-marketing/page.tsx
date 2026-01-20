@@ -44,20 +44,20 @@ const channels = [
 
 export default function PerformanceMarketingPage() {
     return (
-        <main className="bg-white">
+        <main className="bg-[#0f0f14]">
             {/* Hero Section */}
             <div className="relative pt-32 pb-20 overflow-hidden">
-                <GeometricBackground />
+                <GeometricBackground theme="dark" />
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="text-center max-w-4xl mx-auto">
                         {/* Breadcrumbs */}
 
-                        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight mb-8 font-outfit leading-tight">
+                        <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8 font-outfit leading-tight">
                             Full-Funnel Paid <br />
-                            <span className="text-[#5057e6]">Ad Strategies</span>
+                            <span className="text-[#8b5cf6]">Ad Strategies</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
+                        <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10">
                             We drive conversions and revenue across Meta, Google, TikTok, and
                             more. Scale your brand with data-backed decisions.
                         </p>
@@ -65,7 +65,7 @@ export default function PerformanceMarketingPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href="/contact"
-                                className="px-8 py-4 bg-[#5057e6] text-white rounded-full font-bold hover:bg-[#4349c2] transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                                className="px-8 py-4 bg-[#8b5cf6] text-white rounded-full font-bold hover:bg-[#7c3aed] transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
                             >
                                 Let's Scale Your Brand <ArrowRight size={20} />
                             </a>
@@ -91,10 +91,10 @@ export default function PerformanceMarketingPage() {
             <section className="py-24">
                 <div className="container mx-auto px-6">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Multi-Channel Growth
                         </h2>
-                        <p className="text-slate-500 text-lg">
+                        <p className="text-slate-400 text-lg">
                             We manage the entire ecosystem to capture demand wherever it
                             exists.
                         </p>
@@ -126,7 +126,7 @@ export default function PerformanceMarketingPage() {
                                 <div className="relative z-10 w-full transform transition-transform duration-300 group-hover:-translate-y-2">
                                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                                         <div className="max-w-2xl">
-                                            <div className="text-sm font-bold text-[#5057e6] mb-3 uppercase tracking-widest">
+                                            <div className="text-sm font-bold text-[#8b5cf6] mb-3 uppercase tracking-widest">
                                                 Channel Info
                                             </div>
                                             <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -137,7 +137,7 @@ export default function PerformanceMarketingPage() {
                                             </p>
                                         </div>
 
-                                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#5057e6] text-white flex-shrink-0 flex items-center justify-center group-hover:bg-white group-hover:text-[#5057e6] transition-all shadow-lg backdrop-blur-sm">
+                                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#8b5cf6] text-white flex-shrink-0 flex items-center justify-center group-hover:bg-white group-hover:text-[#8b5cf6] transition-all shadow-lg backdrop-blur-sm">
                                             <ArrowRight
                                                 size={28}
                                                 className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300"
@@ -155,20 +155,20 @@ export default function PerformanceMarketingPage() {
             <PerformanceProcess />
 
             {/* CTA Section */}
-            <section className="py-24 bg-white">
+            <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-6">
-                    <div className="bg-gray-50 rounded-[2.5rem] p-12 md:p-24 text-center border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div className="bg-white/5 rounded-[2.5rem] p-12 md:p-24 text-center border border-white/10 shadow-sm relative overflow-hidden">
                         <div className="relative z-10 max-w-3xl mx-auto">
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                                 Ready to Scale?
                             </h2>
-                            <p className="text-slate-500 text-lg mb-10">
+                            <p className="text-slate-400 text-lg mb-10">
                                 Partner with the agency that treats your budget like its own.
                                 Let's drive measurable growth today.
                             </p>
                             <a
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-[#5057e6] text-white rounded-full font-bold hover:bg-[#4349c2] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-[#8b5cf6] text-white rounded-full font-bold hover:bg-[#7c3aed] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1"
                             >
                                 Book a Strategy Call <ArrowRight size={20} />
                             </a>

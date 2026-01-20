@@ -29,7 +29,7 @@ export default function HeroVisual() {
                 <div className="p-6 space-y-4">
                     {/* Simulated Prompt Input */}
                     <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
-                        <div className="w-8 h-8 rounded-full bg-[#5057e6]/10 flex items-center justify-center text-[#5057e6]">
+                        <div className="w-8 h-8 rounded-full bg-[#8b5cf6]/10 flex items-center justify-center text-[#8b5cf6]">
                             <Bot size={16} />
                         </div>
                         <div className="text-xs text-slate-500 font-medium">Generate viral campaign for...</div>
@@ -43,7 +43,7 @@ export default function HeroVisual() {
                             transition={{ delay: 0.5 }}
                             className="flex gap-2"
                         >
-                            <div className="w-2 rounded-full bg-[#5057e6] h-16"></div>
+                            <div className="w-2 rounded-full bg-[#8b5cf6] h-16"></div>
                             <div className="flex-1 space-y-2">
                                 <motion.div
                                     initial={{ width: "0%" }}
@@ -74,14 +74,14 @@ export default function HeroVisual() {
                         transition={{ delay: 1.5 }}
                         className="w-full h-32 bg-slate-100 rounded-lg relative overflow-hidden flex items-center justify-center border border-slate-200"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#5057e6]/40 to-blue-100/40 opacity-80"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/40 to-blue-100/40 opacity-80"></div>
                         <ImageIcon className="text-slate-300 relative z-10" size={32} />
 
                         {/* Scanning Light Effect */}
                         <motion.div
                             animate={{ top: ["-100%", "200%"] }}
                             transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 2 }}
-                            className="absolute left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#5057e6]/20 to-transparent -skew-y-12"
+                            className="absolute left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#8b5cf6]/20 to-transparent -skew-y-12"
                         />
                     </motion.div>
 
@@ -91,7 +91,7 @@ export default function HeroVisual() {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 2.2, type: "spring" }}
-                            className="px-4 py-2 bg-gradient-to-r from-[#5057e6] to-blue-600 text-white text-xs font-bold rounded-full flex items-center gap-2 shadow-lg shadow-[#5057e6]/20"
+                            className="px-4 py-2 bg-gradient-to-r from-[#8b5cf6] to-blue-600 text-white text-xs font-bold rounded-full flex items-center gap-2 shadow-lg shadow-[#8b5cf6]/20"
                         >
                             <CheckCircle2 size={12} /> Campaign Ready
                         </motion.div>
@@ -161,7 +161,7 @@ export default function HeroVisual() {
                 <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
                     transition={{ duration: 4, repeat: Infinity }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#5057e6]/20 rounded-full blur-[100px]"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#8b5cf6]/20 rounded-full blur-[100px]"
                 />
             </div>
         </div>

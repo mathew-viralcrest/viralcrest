@@ -1,7 +1,11 @@
 "use client";
 import { useRef, useEffect } from "react";
 
-export default function GeometricBackground() {
+interface GeometricBackgroundProps {
+    theme?: "light" | "dark";
+}
+
+export default function GeometricBackground({ theme = "light" }: GeometricBackgroundProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -13,8 +17,10 @@ export default function GeometricBackground() {
         let width = (canvas.width = window.innerWidth);
         let height = (canvas.height = window.innerHeight);
 
-        // Light Theme Colors (Soft/Pastel)
-        const colors = ["#5057e6", "#60a5fa", "#f472b6"]; // Soft Purple, Soft Blue, Soft Pink
+        // Theme Configuration
+        const isDark = theme === "dark";
+        const colors = ["#8b5cf6", "#60a5fa", "#f472b6"]; // Soft/Pastel colors (work for both)
+        const connectionColor = isDark ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.05)";
 
         // Create random floating shapes
         const shapes: { x: number, y: number, r: number, dx: number, dy: number, color: string }[] = [];
@@ -54,7 +60,7 @@ export default function GeometricBackground() {
             });
 
             // Draw Connection Lines (Constellation Effect)
-            ctx.strokeStyle = "rgba(0, 0, 0, 0.05)"; // Dark connection lines
+            ctx.strokeStyle = connectionColor;
             ctx.lineWidth = 1;
 
             for (let i = 0; i < shapes.length; i++) {
@@ -85,12 +91,12 @@ export default function GeometricBackground() {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
 
-    }, []);
+    }, [theme]); // Re-run if theme changes
 
     return (
         <canvas
             ref={canvasRef}
-            className="absolute inset-0 z-[-10] w-full h-full bg-slate-50"
+            className={`absolute inset-0 z-[-10] w-full h-full ${theme === "dark" ? "bg-[#0f0f14]" : "bg-slate-50"}`}
         />
     );
 }
